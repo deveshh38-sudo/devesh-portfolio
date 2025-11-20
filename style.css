@@ -1,12 +1,12 @@
 /* --- 1. Global Reset & Variables --- */
 :root {
-    /* Modern Minimalist Theme: White base, Black text, Orange accent */
-    --color-primary: #D4AF37; /* Electric Orange Accent */
-    --color-secondary-accent: #C19A0A; /* Darker Orange for contrast */
-    --color-light: #FAFAFA;    /* Pure White - Main Background */
-    --color-off-white: #F9F9F9; /* Very light gray for secondary backgrounds */
-    --color-dark: #222222;    /* Deep Charcoal - Main Text */
-    --color-text: #555555;    /* Medium Gray - Secondary Text */
+    
+    --color-primary: #FF9800; 
+    --color-secondary-accent: #F57C00; 
+    --color-light: #F4F9F8;    
+    --color-off-white: #F9F9F9; 
+    --color-dark: #212E35;    
+    --color-text: #555555;   
     --font-heading: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     --font-body: 'Inter', 'Arial', sans-serif;
 }

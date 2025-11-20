@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - DEVESH</title>
+    <!-- Links to our CSS and JS files -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fixed Top Navigation Bar -->
+    <header id="navbar">
+        <nav class="container">
+            <div class="logo">DEVESH GAUTAM</div>
+            <ul>
+                <li><a href="#motion-work">Motion</a></li>
+                <li><a href="#posters">Posters</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="Your_Resume.pdf" target="_blank" class="cta-link download-btn-nav">Resume (PDF)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <p class="subtitle">Motion Graphics & Design</p>
+                <h1>Designing Movement. Defining Aesthetics.</h1>
+                <p class="intro-text">Showcasing a curated collection of impactful animated projects and visual poster works.</p>
+                <a href="#motion-work" class="main-cta-btn">View My Reel</a>
+            </div>
+        </section>
+
+        <!-- Motion Graphics Section (YouTube Embeds) -->
+        <section id="motion-work">
+            <div class="container">
+                <h2>🎬 Motion Reel & Projects</h2>
+                <div class="video-gallery">
+                    
+                    <!-- PROJECT 1: REPLACE ID BELOW -->
+                    <div class="video-item">
+                        <div class="video-container">
+                           <iframe 
+                           src="https://www.youtube.com/embed/0GgNM64ZQVE?si=5XC4DR95s1SzyOYB" 
+                           title="Motion Portfolio" 
+                           frameborder="0" 
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                           allowfullscreen>
+                           </iframe> 
+                         </div>
+                        <p class="caption">Motion Portfolio</p>
+                    </div>
+                   
+                    <div class="video-item">
+                        <div class="video-container">
+                             <iframe 
+                                src="https://www.youtube.com/embed/QeAe5t4_WIU?si=S2Ecpp_mMtCbMO7J" 
+                                title="Redbull Animation" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="caption">Redbull Animation</p>
+                    </div>
+
+                    <!-- Add more video-item blocks here -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Poster Work Section (Gallery) -->
+        <section id="posters" class="dark-section-removed"> 
+            <div class="container">
+                <h2>🖼️ Visual Poster Gallery</h2>
+                <div class="poster-gallery">
+                 
+                    <img src="assets/Face mask and mist.jpg" data-large-src="assets/Face mask and mist.jpg" alt="Product Promotion" loading="lazy">
+                    <img src="assets/lakme.jpg" data-large-src="assets/lakme.jpg" alt="Product promotion" loading="lazy">
+                    <img src="assets/movie poster.jpg" data-large-src="assets/movie poster.jpg" alt="Movie poster" loading="lazy">
+                    <img src="assets/Lynora skin.jpg" data-large-src="assets/Lynora skin.jpg" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/eAGLE'S DEN.png" data-large-src="assets/eAGLE'S DEN.png" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/illusion.jpg" data-large-src="assets/illusion.jpg" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/meditation.jpg" data-large-src="assets/meditation.jpg" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/vacation on mars.png" data-large-src="assets/vacation on mars.png" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/Red Horizon.png" data-large-src="assets/Red Horizon.png" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/grave.png" data-large-src="assets/grave.png" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/luna bistro.png" data-large-src="assets/luna bistro.png" alt="Digital Art Poster" loading="lazy">
+                   <img src="assets/luna bistro 2.png" data-large-src="assets/luna bistro 2.png" alt="Digital Art Poster" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- About and Contact Section -->
+        <section id="about">
+            <div class="container">
+                <h2>👋 About & Contact</h2>
+                <div class="about-flex">
+                    <div class="bio">
+                        <h3>Design Philosophy</h3>
+                        <p>I specialize in combining **rhythmic animation** with **strong visual storytelling**. My background in graphic design ensures that every frame, whether static or moving, holds aesthetic integrity and communicates clearly.</p>
+                        <a href="Your_Resume.pdf" target="_blank" class="main-cta-btn resume-btn">Download Full Resume (PDF)</a>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Connect</h3>
+                        <p>Email: <a href="mailto:deveshh38@gmail.com">deveshh38@gmail.com</a></p>
+                        <p>LinkedIn: <a href="#">profile</a></p>
+                        <p>Instagram: <a href="https://www.instagram.com/de_v_signs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">@de_v_signs</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>Built with Movement </p>
+    </footer>
+
+    <!-- LIGHTBOX MODAL STRUCTURE -->
+    <!-- The onclick="closeLightbox()" allows closing by clicking the dark background -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <button id="lightbox-close" aria-label="Close image viewer">X</button>
+        <img id="lightbox-image" src="" alt="Full-screen image viewer">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

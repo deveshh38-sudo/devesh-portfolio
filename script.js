@@ -4,7 +4,6 @@ const scrollThreshold = 50;
 
 function handleScroll() {
     if (window.scrollY >= scrollThreshold) {
-        // Adds the 'scrolled' class (defined in CSS) to change navbar appearance
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
@@ -20,47 +19,72 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 const posterImages = document.querySelectorAll('.poster-gallery img');
 
-/**
- * Opens the lightbox modal with the specified high-resolution image source.
- * @param {string} src - The URL of the image to display.
- */
 function openLightbox(src) {
     lightboxImage.src = src;
-    // Activate the modal (shows it using the CSS .active class)
     lightbox.classList.add('active');
-    // Prevent background scrolling when modal is open
     document.body.style.overflow = 'hidden'; 
 }
 
-/**
- * Closes the lightbox modal.
- */
 function closeLightbox() {
-    // Hide the lightbox
     lightbox.classList.remove('active'); 
-    // Restore background scrolling
     document.body.style.overflow = '';
-    // Clear the image source to release memory/prevent flicker
     lightboxImage.src = '';
 }
 
-// Add click listeners to all poster images
 posterImages.forEach(img => {
     img.addEventListener('click', (event) => {
-        // Get the high-resolution source from the data attribute (data-large-src)
         const largeSrc = event.currentTarget.getAttribute('data-large-src');
         if (largeSrc) {
             openLightbox(largeSrc);
         }
     });
+    
+    // --- NEW: Add Decode Hint for Faster Rendering ---
+    if ('decode' in img) {
+        img.decode();
+    }
 });
 
-// We attach the close handler to the dedicated close button
 document.getElementById('lightbox-close').addEventListener('click', (event) => {
-    // Stop propagation to ensure clicking the button doesn't trigger the main lightbox click handler
     event.stopPropagation();
     closeLightbox();
 });
 
-// The global function closeLightbox() is also called when clicking the dark background 
-// overlay via the HTML attribute onclick="closeLightbox()" on the #lightbox element.
+
+// --- 3. Thumbnail / Fake Embed Logic ---
+
+const videoItems = document.querySelectorAll('.video-item');
+
+function initializeMedia() {
+    // --- Check and initialize video thumbnails ---
+    videoItems.forEach(item => {
+        const thumbnailDiv = item.querySelector('.video-thumbnail');
+        if (!thumbnailDiv || !thumbnailDiv.hasAttribute('data-video-id')) return;
+
+        const videoId = thumbnailDiv.getAttribute('data-video-id');
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        thumbnailDiv.style.backgroundImage = `url('${thumbnailUrl}')`;
+
+        thumbnailDiv.addEventListener('click', () => {
+            loadIframe(item, videoId);
+        });
+    });
+}
+
+function loadIframe(container, videoId) {
+    const iframeHTML = `
+        <iframe 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    `;
+
+    const videoContainer = container.querySelector('.video-container');
+    videoContainer.innerHTML = iframeHTML;
+}
+
+// Start the media initialization
+initializeMedia();

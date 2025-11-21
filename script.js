@@ -39,7 +39,7 @@ posterImages.forEach(img => {
         }
     });
     
-    // --- NEW: Add Decode Hint for Faster Rendering ---
+    // Add Decode Hint for Faster Rendering
     if ('decode' in img) {
         img.decode();
     }
@@ -56,22 +56,30 @@ document.getElementById('lightbox-close').addEventListener('click', (event) => {
 const videoItems = document.querySelectorAll('.video-item');
 
 function initializeMedia() {
-    // --- Check and initialize video thumbnails ---
+    // Check and initialize video thumbnails
     videoItems.forEach(item => {
         const thumbnailDiv = item.querySelector('.video-thumbnail');
+        // Ensure the element exists and has a video ID before processing
         if (!thumbnailDiv || !thumbnailDiv.hasAttribute('data-video-id')) return;
 
         const videoId = thumbnailDiv.getAttribute('data-video-id');
+        
+        // Set the thumbnail background image using YouTube's standard high-quality link
         const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
         thumbnailDiv.style.backgroundImage = `url('${thumbnailUrl}')`;
 
+        // Add the click listener to swap the thumbnail for the player
         thumbnailDiv.addEventListener('click', () => {
             loadIframe(item, videoId);
         });
     });
 }
 
+/**
+ * Replaces the thumbnail div with the live YouTube iframe player.
+ */
 function loadIframe(container, videoId) {
+    // Construct the live iframe HTML, including autoplay
     const iframeHTML = `
         <iframe 
             src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
@@ -82,6 +90,7 @@ function loadIframe(container, videoId) {
         </iframe>
     `;
 
+    // Replace the video-container content with the live iframe
     const videoContainer = container.querySelector('.video-container');
     videoContainer.innerHTML = iframeHTML;
 }

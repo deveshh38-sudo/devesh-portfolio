@@ -9,7 +9,7 @@
     --color-text: #555555;    /* Medium Gray - Secondary Text */
     
     /* Grid color for the background pattern */
-    --color-grid: rgba(255, 87, 34, 0.06); 
+    --color-grid: rgba(255, 75, 20, 0.87); 
 
     --font-heading: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     --font-body: 'Inter', 'Arial', sans-serif;

@@ -6,14 +6,14 @@
     
     /* Backgrounds */
     --color-light: #ffffff;    /* Pure White Body */
-    --color-off-white: rgba(255, 255, 255, 0); /* Glassy Transparent White */
+    --color-off-white: rgba(255, 255, 255, 0.238); /* Glassy Transparent White */
     
     /* Text */
     --color-dark: #111111;     /* Deep Black */
     --color-text: #242424;     /* Medium Gray */
     
     /* Subtle Gray Grid lines */
-    --color-grid: rgb(0, 0, 0); 
+    --color-grid: rgba(0, 0, 0, 0); 
 
     --font-heading: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     --font-body: 'Inter', 'Arial', sans-serif;
@@ -57,7 +57,7 @@ body::before {
         /* Subtle deep gray vignette effect from the edges */
         0 0 100px 50px rgba(255, 145, 0, 0.127) inset;
     
-    background: radial-gradient(circle at 10% 80%, rgba(255, 86, 34, 0.152) 0%, transparent 40%);
+    background: radial-gradient(circle at 10% 80%, rgba(255, 86, 34, 0.788) 0%, transparent 50%);
 }
 
 .container {
@@ -98,7 +98,7 @@ h2 {
 section {
     padding: 100px 0;
     min-height: 400px;
-    background-color: transparent; /* Allows body pattern to show */
+    background-color: #ffffff17 /* Allows body pattern to show */
 }
 
 .dark-section-removed {
@@ -106,7 +106,7 @@ section {
     background-color: transparent;
     
     /* Optional: Add a subtle white gradient fade if text is hard to read */
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 100%);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 
@@ -239,18 +239,18 @@ nav ul li a:hover {
 
 .video-item, .content-box {
     /* Glassmorphism Card Style */
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.703);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.6);
     
     padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); /* Soft colored shadow */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.096); /* Soft colored shadow */
     transition: transform 0.3s, box-shadow 0.3s;
 
      box-shadow: 
-        0 4px 6px rgba(0, 0, 0, 0.05), /* Subtle shadow for lift */
+        0 4px 6px rgba(0, 0, 0, 0.181), /* Subtle shadow for lift */
         0 10px 20px rgba(0, 0, 0, 0.03); /* Wider shadow for float */
 }
 

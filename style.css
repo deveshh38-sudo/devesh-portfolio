@@ -15,8 +15,8 @@
     /* Subtle Gray Grid lines */
     --color-grid: rgba(0, 0, 0, 0); 
 
-    --font-heading: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    --font-body: 'Inter', 'Arial', sans-serif;
+    --font-heading: 'Inter', 'system-ui', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Inter', 'system-ui', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 * {
